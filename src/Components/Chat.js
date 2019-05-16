@@ -37,12 +37,12 @@ class Chat extends Component {
                     }
                 }
             })
-            .then(currentRoom => {
-                this.setState({ currentRoom })
-            })
         })
+        .then(currentRoom => {
+            this.setState({ currentRoom })
+    })
         .catch(error => console.error('error', error))
-    }
+}
 
   render() {
     return (
