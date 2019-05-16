@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 import MessageList from './MessageList';
+import SendMessageForm from './SendMessageForm';
 
 class Chat extends Component {
     state = {
@@ -44,11 +45,19 @@ class Chat extends Component {
         .catch(error => console.error('error', error))
 }
 
+    onSend = text => {
+        this.state.currentUser.sendMessage({
+            text,
+            roomId: this.state.currentRoom.id
+        })
+    }
+
   render() {
     return (
       <div className='wrapper'>
         <div className='chat'>
             <MessageList messages={this.state.messages} />
+            <SendMessageForm onSend={this.onSend} />
         </div>
       </div>
     )
