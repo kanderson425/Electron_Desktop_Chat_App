@@ -1,8 +1,8 @@
 // ./src/App.js
 
 import React, { Component } from 'react'
-import UsernameForm from './Components/UsernameForm';
-import Chat from './Components/Chat';
+import UsernameForm from './UsernameForm';
+import Chat from './Chat';
 
 class App extends Component {
   state = {
